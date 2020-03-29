@@ -74,5 +74,7 @@
                         window.history.back();
                     }
                 </script>
+
+                <p>Your IP: <?php echo $_SERVER[REMOTE_ADDR];  ?></p>
         </body>
     </html>
