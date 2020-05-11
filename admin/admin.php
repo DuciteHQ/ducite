@@ -34,17 +34,17 @@
 
             $fulllURL = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
-            if (strpos($fulllURL, "error=noid")) {
+            if (strpos($fulllURL, "error=1")) {
                 echo "<br><span style='color:red;' class='box'>There was an error: You have no ID in the app ini file!</span>";
                 error_log("No ID specified in app.ini!", 2, "$_SERVER[DOCUMENT_ROOT]/logs/error.log");
             }
 
-            if (strpos($fulllURL, "error=noini")) {
+            if (strpos($fulllURL, "error=2")) {
                 echo "<br><span style='color:red;' class='box'>There was an fatal error: The App INI file could not be found!</span";
                 error_log("No App INI found!", 1, "$_SERVER[DOCUMENT_ROOT]/logs/error.log");
             }
 
-            if (strpos($fulllURL, "error=nE")) {
+            if (strpos($fulllURL, "error=0")) {
                 echo "<br><span style='color:red;' class='box'>There was an error, but we can't give more info about it!</span>";
                 error_log("Error occured, but no more information about it!", 2, "$_SERVER[DOCUMENT_ROOT]/logs/error.log");
             }
